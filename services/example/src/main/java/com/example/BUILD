@@ -1,4 +1,5 @@
-load("@rules_java//java:defs.bzl", "java_library", "java_binary")
+load("@rules_java//java:defs.bzl", "java_library")
+load("@io_bazel_rules_docker//java:image.bzl", "java_image")
 
 DEPS = [
     "//libs/greeter/src/main/java/io/brymck"
@@ -11,16 +12,8 @@ java_library(
     deps = DEPS,
 )
 
-java_binary(
+java_image(
     name = "app",
     main_class = "com.example.ProjectRunner",
     runtime_deps = [":lib"],
 )
-
-# load("@io_bazel_rules_docker//java:image.bzl", "java_image")
-# java_image(
-    # name = "ProjectRunner",
-    # srcs = ["src/main/java/com/example/ProjectRunner.java"],
-    # layers = ["//libs/greeter"],
-    # main_class = "com.example.ProjectRunner",
-# )
