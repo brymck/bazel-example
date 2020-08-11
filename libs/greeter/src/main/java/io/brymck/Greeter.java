@@ -1,4 +1,4 @@
-package com.example;
+package io.brymck;
 
 public class Greeter {
 	public void sayHi() {

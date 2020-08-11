@@ -3,4 +3,5 @@ bazel-*
 
 # IntelliJ
 .idea
+.ijwb
 stale_outputs_checked
